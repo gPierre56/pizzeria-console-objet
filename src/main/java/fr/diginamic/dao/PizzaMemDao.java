@@ -12,10 +12,10 @@ import fr.pizzeria.model.Pizza;
  */
 public class PizzaMemDao implements IPizzaDao {
 
-	public List<Pizza> listePizzas = new ArrayList<Pizza>();
+	private List<Pizza> listePizzas = new ArrayList<Pizza>();
 
-	@Override
-	public List<Pizza> findAllPizzas() {
+	public PizzaMemDao() {
+		super();
 
 		listePizzas.add(new Pizza("PEP", "Pepperoni", 12.50D));
 		listePizzas.add(new Pizza("MAR", "Margherita", 14.00D));
@@ -25,6 +25,11 @@ public class PizzaMemDao implements IPizzaDao {
 		listePizzas.add(new Pizza("SAV", "La savoyarde", 13.50D));
 		listePizzas.add(new Pizza("ORI", "L'orientale", 13.50D));
 		listePizzas.add(new Pizza("IND", "L'indienne", 14.00D));
+	}
+
+	@Override
+	public List<Pizza> findAllPizzas() {
+
 		return listePizzas;
 	}
 
@@ -77,6 +82,24 @@ public class PizzaMemDao implements IPizzaDao {
 			}
 		}
 		return flag;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the listePizzas
+	 */
+	public List<Pizza> getListePizzas() {
+		return listePizzas;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param listePizzas the listePizzas to set
+	 */
+	public void setListePizzas(List<Pizza> listePizzas) {
+		this.listePizzas = listePizzas;
 	}
 
 }
