@@ -12,8 +12,13 @@ import fr.pizzeria.model.Pizza;
  */
 public class PizzaMemDao implements IPizzaDao {
 
+	/** listePizzas : List<Pizza> */
 	private List<Pizza> listePizzas = new ArrayList<Pizza>();
 
+	/**
+	 * Constructor : Initialise une liste de pizza préremplie
+	 * 
+	 */
 	public PizzaMemDao() {
 		super();
 
@@ -27,18 +32,27 @@ public class PizzaMemDao implements IPizzaDao {
 		listePizzas.add(new Pizza("IND", "L'indienne", 14.00D));
 	}
 
+	/**
+	 * retourne la totalité des pizzas enregistrées
+	 */
 	@Override
 	public List<Pizza> findAllPizzas() {
 
 		return listePizzas;
 	}
 
+	/**
+	 * Ajoute une pizza dans la liste
+	 */
 	@Override
 	public void saveNewPizza(Pizza pizza) {
 		listePizzas.add(pizza);
 
 	}
 
+	/**
+	 * Modifie les 3 champs d'une pizza enregistrée
+	 */
 	@Override
 	public void updatePizza(String codePizza, Pizza pizza) {
 
@@ -51,6 +65,9 @@ public class PizzaMemDao implements IPizzaDao {
 		}
 	}
 
+	/**
+	 * Supprime une pizza de la liste
+	 */
 	@Override
 	public void deletePizza(String codePizza) {
 		for (int i = 0; i < listePizzas.size(); i++) {
@@ -61,6 +78,9 @@ public class PizzaMemDao implements IPizzaDao {
 		}
 	}
 
+	/**
+	 * Renvoie la pizza avec le code correspondant, sinon retourne null
+	 */
 	@Override
 	public Pizza findPizzaByCode(String codePizza) {
 		for (int i = 0; i < listePizzas.size(); i++) {
@@ -72,6 +92,10 @@ public class PizzaMemDao implements IPizzaDao {
 		return null;
 	}
 
+	/**
+	 * renvoie true si le code en parametre correspond au code d'une pizza de la
+	 * liste, sinon renvoie false
+	 */
 	@Override
 	public boolean pizzaExists(String codePizza) {
 		boolean flag = false;
