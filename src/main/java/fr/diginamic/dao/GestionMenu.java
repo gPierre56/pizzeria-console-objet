@@ -10,6 +10,12 @@ import fr.diginamic.service.ListerPizzaService;
 import fr.diginamic.service.ModifierPizzaService;
 import fr.diginamic.service.SupprimerPizzaService;
 
+/**
+ * Classe qui gère les entrées claviers de l'utilisateur
+ * 
+ * @author Guillaume
+ *
+ */
 public class GestionMenu {
 
 	PizzaMemDao dao = new PizzaMemDao();
@@ -31,7 +37,7 @@ public class GestionMenu {
 			try {
 				ajouterPizza.executeUC(sc, dao);
 			} catch (SavePizzaException e) {
-				// TODO Auto-generated catch block
+
 				System.err.println(e.getMessage());
 			}
 			break;
@@ -39,7 +45,7 @@ public class GestionMenu {
 			try {
 				modifierPizza.executeUC(sc, dao);
 			} catch (UpdatePizzaException e) {
-				// TODO Auto-generated catch block
+
 				System.err.println(e.getMessage());
 			}
 			break;
@@ -47,7 +53,7 @@ public class GestionMenu {
 			try {
 				supprimerPizza.executeUC(sc, dao);
 			} catch (DeletePizzaException e) {
-				// TODO Auto-generated catch block
+
 				System.err.println(e.getMessage());
 			}
 			break;

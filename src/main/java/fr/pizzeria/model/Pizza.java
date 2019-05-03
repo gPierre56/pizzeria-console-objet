@@ -1,5 +1,11 @@
 package fr.pizzeria.model;
 
+/**
+ * Classe modèle pour instancier des pizzas
+ * 
+ * @author Guillaume
+ *
+ */
 public class Pizza {
 
 	/** id : int */
@@ -10,6 +16,8 @@ public class Pizza {
 	private String libelle;
 	/** prix : Double */
 	private Double prix;
+	/** categorie : CategoriePizza */
+	private CategoriePizza categorie;
 	/** cpt : int */
 	private static int cpt = 0;
 
@@ -19,12 +27,14 @@ public class Pizza {
 	 * @param code
 	 * @param libelle
 	 * @param prix
+	 * @param categorie
 	 */
-	public Pizza(String code, String libelle, Double prix) {
+	public Pizza(String code, String libelle, Double prix, CategoriePizza categorie) {
 		super();
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
+		this.categorie = categorie;
 		this.id = cpt;
 		cpt++;
 	}
@@ -36,13 +46,15 @@ public class Pizza {
 	 * @param code
 	 * @param libelle
 	 * @param prix
+	 * @param categorie
 	 */
-	public Pizza(int id, String code, String libelle, Double prix) {
+	public Pizza(int id, String code, String libelle, Double prix, CategoriePizza categorie) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
+		this.categorie = categorie;
 	}
 
 	/**
@@ -58,6 +70,7 @@ public class Pizza {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((categorie == null) ? 0 : categorie.hashCode());
 		result = prime * result + ((code == null) ? 0 : code.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((libelle == null) ? 0 : libelle.hashCode());
@@ -74,6 +87,8 @@ public class Pizza {
 		if (getClass() != obj.getClass())
 			return false;
 		Pizza other = (Pizza) obj;
+		if (categorie != other.categorie)
+			return false;
 		if (code == null) {
 			if (other.code != null)
 				return false;
@@ -96,7 +111,8 @@ public class Pizza {
 
 	@Override
 	public String toString() {
-		return this.code + " -> " + this.libelle + " (" + this.prix + ")";
+		return this.code + " -> " + this.libelle + ", Catégorie : " + this.categorie.getNomCategorie() + " ("
+				+ this.prix + ")";
 	}
 
 	/**
@@ -169,6 +185,24 @@ public class Pizza {
 	 */
 	public void setPrix(Double prix) {
 		this.prix = prix;
+	}
+
+	/**
+	 * Getter
+	 * 
+	 * @return the categorie
+	 */
+	public CategoriePizza getCategorie() {
+		return categorie;
+	}
+
+	/**
+	 * Setter
+	 * 
+	 * @param categorie the categorie to set
+	 */
+	public void setCategorie(CategoriePizza categorie) {
+		this.categorie = categorie;
 	}
 
 }

@@ -6,6 +6,12 @@ import fr.diginamic.dao.PizzaMemDao;
 import fr.diginamic.exception.DeletePizzaException;
 import fr.pizzeria.model.Pizza;
 
+/**
+ * Gère les interactions utilisateurs dans le but de supprimer une pizza
+ * 
+ * @author Guillaume
+ *
+ */
 public class SupprimerPizzaService extends MenuService {
 
 	@Override

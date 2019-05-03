@@ -8,8 +8,8 @@ import java.util.List;
 import fr.pizzeria.model.Pizza;
 
 /**
- * @author Guillaume
- *
+ * @author Guillaume Liste des fonctions utilisées pour la gestion de la
+ *         pizzeria
  */
 public interface IPizzaDao {
 

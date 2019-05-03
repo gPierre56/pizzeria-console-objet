@@ -5,6 +5,13 @@ import java.util.Scanner;
 import fr.diginamic.dao.PizzaMemDao;
 import fr.diginamic.exception.StockageException;
 
+/**
+ * Classe qui comporte la fonction mère des autres fonctions utilisées dans le
+ * menu
+ * 
+ * @author Guillaume
+ *
+ */
 public abstract class MenuService {
 
 	/**

@@ -1,5 +1,11 @@
 package fr.diginamic.service;
 
+/**
+ * classe qui gère l'affichage du menu
+ * 
+ * @author Guillaume
+ *
+ */
 public class AfficherMenuService {
 
 	/**

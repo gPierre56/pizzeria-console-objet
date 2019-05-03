@@ -4,9 +4,12 @@ package fr.diginamic.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
 
 /**
+ * Définition des méthodes utilisées pour la gestion de la pizzeria
+ * 
  * @author Guillaume
  *
  */
@@ -22,14 +25,14 @@ public class PizzaMemDao implements IPizzaDao {
 	public PizzaMemDao() {
 		super();
 
-		listePizzas.add(new Pizza("PEP", "Pepperoni", 12.50D));
-		listePizzas.add(new Pizza("MAR", "Margherita", 14.00D));
-		listePizzas.add(new Pizza("REIN", "La reine", 11.50D));
-		listePizzas.add(new Pizza("FRO", "La 4 fromage", 12.00D));
-		listePizzas.add(new Pizza("CAN", "La cannibale", 12.50D));
-		listePizzas.add(new Pizza("SAV", "La savoyarde", 13.50D));
-		listePizzas.add(new Pizza("ORI", "L'orientale", 13.50D));
-		listePizzas.add(new Pizza("IND", "L'indienne", 14.00D));
+		listePizzas.add(new Pizza("PEP", "Pepperoni", 12.50D, CategoriePizza.VIANDE));
+		listePizzas.add(new Pizza("MAR", "Margherita", 14.00D, CategoriePizza.VIANDE));
+		listePizzas.add(new Pizza("REIN", "La reine", 11.50D, CategoriePizza.VIANDE));
+		listePizzas.add(new Pizza("FRO", "La 4 fromage", 12.00D, CategoriePizza.SANS_VIANDE));
+		listePizzas.add(new Pizza("CAN", "La cannibale", 12.50D, CategoriePizza.POISSON));
+		listePizzas.add(new Pizza("SAV", "La savoyarde", 13.50D, CategoriePizza.VIANDE));
+		listePizzas.add(new Pizza("ORI", "L'orientale", 13.50D, CategoriePizza.VIANDE));
+		listePizzas.add(new Pizza("IND", "L'indienne", 14.00D, CategoriePizza.SANS_VIANDE));
 	}
 
 	/**

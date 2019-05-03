@@ -6,6 +6,8 @@ import fr.diginamic.dao.GestionMenu;
 import fr.diginamic.service.AfficherMenuService;
 
 /**
+ * Point d'entrée de l'application
+ * 
  * @author Guillaume
  */
 public class PizzeriaAdminConsoleApp {

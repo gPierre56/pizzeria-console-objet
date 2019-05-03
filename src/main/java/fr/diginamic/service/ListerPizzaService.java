@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 import fr.diginamic.dao.PizzaMemDao;
 
+/**
+ * classe qui gère l'affichage des pizzas dans le menu
+ * 
+ * @author Guillaume
+ *
+ */
 public class ListerPizzaService extends MenuService {
 
 	@Override
