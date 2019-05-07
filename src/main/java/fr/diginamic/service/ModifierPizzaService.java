@@ -3,6 +3,8 @@ package fr.diginamic.service;
 import java.util.Scanner;
 
 import org.apache.commons.lang3.math.NumberUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import fr.diginamic.dao.PizzaMemDao;
 import fr.diginamic.exception.UpdatePizzaException;
@@ -17,6 +19,8 @@ import fr.pizzeria.model.Pizza;
  */
 public class ModifierPizzaService extends MenuService {
 
+	Logger LOGGER = LoggerFactory.getLogger(ModifierPizzaService.class);
+
 	@Override
 	public void executeUC(Scanner sc, PizzaMemDao dao) throws UpdatePizzaException {
 
@@ -28,6 +32,7 @@ public class ModifierPizzaService extends MenuService {
 		String codePizza = sc.nextLine();
 		// recherche de l'existence de la pizza avec ce code, sinon message d'erreur
 		if (dao.pizzaExists(codePizza) == false) {
+			LOGGER.error("Erreur - pizza innexistante");
 			throw new UpdatePizzaException("Cette pizza n'existe pas");
 		}
 		System.out.println("Entrez le nouveau code");
@@ -68,6 +73,8 @@ public class ModifierPizzaService extends MenuService {
 		}
 		CategoriePizza categorie = CategoriePizza.findCategorieByNum(numCategorie);
 		Pizza pizzaModif = new Pizza(code, libelle, prix, categorie);
+		LOGGER.info("Pizza modifiée : ".concat(dao.findPizzaByCode(codePizza).toString()));
+		LOGGER.info("Nouvelle pizza : ".concat(pizzaModif.toString()));
 		dao.updatePizza(codePizza, pizzaModif);
 
 	}

@@ -18,6 +18,7 @@ public class PizzeriaAdminConsoleApp {
 	/**
 	 * @param méthode main
 	 */
+	/** LOG : Logger */
 	private static final Logger LOG = LoggerFactory.getLogger(PizzeriaAdminConsoleApp.class);
 
 	public static void main(String[] args) {

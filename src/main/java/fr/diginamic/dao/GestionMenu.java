@@ -2,6 +2,9 @@ package fr.diginamic.dao;
 
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import fr.diginamic.exception.DeletePizzaException;
 import fr.diginamic.exception.SavePizzaException;
 import fr.diginamic.exception.UpdatePizzaException;
@@ -18,6 +21,7 @@ import fr.diginamic.service.SupprimerPizzaService;
  */
 public class GestionMenu {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(GestionMenu.class);
 	PizzaMemDao dao = new PizzaMemDao();
 	ListerPizzaService listerPizzaService = new ListerPizzaService();
 	AjouterPizzaService ajouterPizza = new AjouterPizzaService();

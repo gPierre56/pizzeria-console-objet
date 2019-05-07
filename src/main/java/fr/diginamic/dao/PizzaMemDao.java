@@ -4,6 +4,9 @@ package fr.diginamic.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
 
@@ -14,6 +17,9 @@ import fr.pizzeria.model.Pizza;
  *
  */
 public class PizzaMemDao implements IPizzaDao {
+
+	/** LOGGER : Logger / classe de traçage */
+	private static final Logger LOGGER = LoggerFactory.getLogger(PizzaMemDao.class);
 
 	/** listePizzas : List<Pizza> */
 	private List<Pizza> listePizzas = new ArrayList<Pizza>();
@@ -49,6 +55,7 @@ public class PizzaMemDao implements IPizzaDao {
 	 */
 	@Override
 	public void saveNewPizza(Pizza pizza) {
+
 		listePizzas.add(pizza);
 
 	}
