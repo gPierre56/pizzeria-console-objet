@@ -13,6 +13,9 @@ public class AjouterPizzaServiceTest {
 
 	@Test
 	public void testExecuteUC() {
+		AjouterPizzaService pizzaService = new AjouterPizzaService();
+
+		systemInMock.provideLines("nomaupif", "LMP", "250", "1");
 
 	}
 
