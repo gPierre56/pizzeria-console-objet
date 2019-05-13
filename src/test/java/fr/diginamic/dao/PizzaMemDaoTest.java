@@ -53,6 +53,14 @@ public class PizzaMemDaoTest {
 	}
 
 	@Test
+	public void testUpdatePizzaNonNominal() {
+		PizzaMemDao dao = new PizzaMemDao();
+		dao.updatePizza("1651", null);
+		assertNull(dao.findPizzaByCode("1651"));
+
+	}
+
+	@Test
 	public void testDeletePizza() {
 		PizzaMemDao dao = new PizzaMemDao();
 		try {
